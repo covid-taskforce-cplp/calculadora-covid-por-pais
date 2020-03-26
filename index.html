@@ -9,35 +9,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="./css/codigo-terceiros/bootstrap.min.css">
-  <title>calculadora-covid-por-pais v0.1.0</title>
+  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.1.0</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>calculadora-covid-por-pais v0.1.0</h1>
-    <p>
-      Discussão em <a href="https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/">https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/</a>.
-    </p>
+    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.1.0</h1>
     <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">População</label>
-        <input type="text" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="209300000">
-        <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região. Ex.: 209.300.000 é população do 🇧🇷 Brasil</small>
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="populacao-total-sugestao">População pré-definidas</label>
+            <select class="form-control" id="populacao-total-sugestao" aria-describedby="populacao-total-dica" disabled>
+              <option>Customizado</option>
+              <option>🇧🇷 Brasil</option>
+            </select>
+            <small id="populacao-total-sugestao-dica" class="form-text text-muted">Você pode escolher uma sugestão de região em vez de customizar população total</small>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="populacao-total">População</label>
+            <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="209300000">
+            <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região. Ex.: 209.300.000 é população do 🇧🇷 Brasil</small>
+          </div>
+        </div>
       </div>
+
       <div class="form-group">
-        <label for="exampleInputEmail1">População infectada (%)</label>
-        <input type="text" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
+        <label for="populacao-infectada-percentual">População infectada (%)</label>
+        <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
         <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">População</label>
-        <input type="text" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
+        <label for="epidemia-letalidade-media">Letalidade infecção</label>
+        <input type="number" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
         <small id="epidemia-letalidade-media-dica" class="form-text text-muted">Informe um percentual. Aceita virgulas e pontos como separador</small>
       </div>
       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-      <div id="resultado-vivos"></div>
-      <div id="resultado-obitos"></div>
+      <div>
+        Total inicial: <span id="resultado-total-inicial"></span>
+      </div>
+      <div>
+        Total vivos: <span id="resultado-vivos"></span>
+      </div>
+      <div>
+        Total óbitos: <span id="resultado-obitos"></span>
+      </div>
     </form>
+    <hr />
+    <div class="alert alert-secondary" role="alert">
+      Discussão em <a href="https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/">https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/</a>
+      <sup>(requer convite, fale com membros antes)</sup>. <br>
+      Como é feito o cálculo? Veja <a href="https://github.com/covid-taskforce-cplp/calculadora-covid-por-pais/blob/master/js/calculadora-logica.js">js/calculadora-logica.js</a>.
+    </div>
+
   </div>
 
   <script src="./js/codigo-terceiros/jquery-3.4.1.slim.min.js"></script>
