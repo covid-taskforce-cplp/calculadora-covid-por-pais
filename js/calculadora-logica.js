@@ -1,11 +1,14 @@
 /**
 * Arquivo com funções escritas em JavaScript com cálculos principais.
-* Favor evitar refatorar as funcões de calculadora-logica.js de modo que fique
-* mais difícil para não-especialistas em JavaScript (ex.: pesquisadores
-*  academicos)
 *
-* @license Public Domain
+* JAVASCRITP BÁSICO: https://developer.mozilla.org/pt-BR/docs/Aprender/Getting_started_with_the_web/JavaScript_basico
+* VIDEO:             [[TODO: adicionar algum vídeo de ajuda sobre JavaScript aqui]] (fititnt, 2020-03-26 17:11 BRT)
+*
+*
+* @license PUBLIC DOMAIN
 */
+
+console.log('calculadora-logica.js carregado');
 
 /**
  * Simulação mais simplificada possível de, para uma data população total e

@@ -1,5 +1,18 @@
 # calculadora-covid-por-pais
-[rascunho] Veja https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/
+Visite [https://covid-taskforce-cplp.github.io/calculadora-covid-por-pais/](https://covid-taskforce-cplp.github.io/calculadora-covid-por-pais/)
+para ver o resultado.
+
+## Sobre o código
+
+### js/calculadora-inicializacao.js
+O [js/calculadora-inicializacao.js](js/calculadora-inicializacao.js)
+
+
+* Favor evitar refatorar as funcões de calculadora-logica.js de modo que fique
+* mais difícil para não-especialistas em JavaScript (ex.: pesquisadores
+*  academicos)
+
+(...)
 
 # Licença
 

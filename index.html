@@ -29,22 +29,36 @@
         </div>
         <div class="col-sm">
           <div class="form-group">
-            <label for="populacao-total">População</label>
+            <label for="populacao-total">População Total</label>
             <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="209300000">
             <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região. Ex.: 209.300.000 é população do 🇧🇷 Brasil</small>
           </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="populacao-infectada-percentual">População infectada (%)</label>
-        <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
-        <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
-      </div>
-      <div class="form-group">
-        <label for="epidemia-letalidade-media">Letalidade infecção</label>
-        <input type="number" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
-        <small id="epidemia-letalidade-media-dica" class="form-text text-muted">Informe um percentual. Aceita virgulas e pontos como separador</small>
+      <div class="row">
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="populacao-infectada-percentual-sugestao">População infectada (%) pré-definidas</label>
+            <select class="form-control" id="populacao-infectada-percentual-sugestao" aria-describedby="populacao-infectada-percentual-dica" disabled>
+              <option>Customizado</option>
+              <option>🇧🇷 Brasil</option>
+            </select>
+            <small id="populacao-infectada-percentual-sugestao-dica" class="form-text text-muted">Estimativas sugeridas conforme relatórios oficiais</small>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="form-group">
+            <label for="populacao-infectada-percentual">População infectada (%)</label>
+            <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
+            <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
+          </div>
+          <div class="form-group">
+            <label for="epidemia-letalidade-media">Letalidade infecção</label>
+            <input type="number" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
+            <small id="epidemia-letalidade-media-dica" class="form-text text-muted">Informe um percentual. Aceita virgulas e pontos como separador</small>
+          </div>
+        </div>
       </div>
       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
       <div>
@@ -57,6 +71,38 @@
         Total óbitos: <span id="resultado-obitos"></span>
       </div>
     </form>
+    <hr />
+    <div>
+      <h2 id="referencias">Referências</h2>
+      <h3>Estimativas de impacto</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Organização</th>
+            <th scope="col">Título</th>
+            <th scope="col">Comentários</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Imperial College COVID-19 Response Team</td>
+            <td>
+              <a href="https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf">
+                Impact of non-pharmaceutical interventions (NPIs) to reduce COVID19 mortality and healthcare demand
+              </a>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Referências de modelos matemáticos</h3>
+      <p><em>TODO: adicionair mais informações</em></p>
+      <!--
+        https://en.wikipedia.org/wiki/Mathematical_modelling_of_infectious_disease
+      -->
+    </div>
     <hr />
     <div class="alert alert-secondary" role="alert">
       Discussão em <a href="https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/">https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/</a>
