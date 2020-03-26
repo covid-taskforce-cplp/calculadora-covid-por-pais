@@ -1,0 +1,1 @@
+console.log('calculadora-inicializacao.js pode ser usada para pre-carregar dados e setar variaveis que poderiam ser reusadas pelo calculadora-logica.js ficar simples para edição por desenvolvedores não especialista em javascript')

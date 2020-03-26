@@ -1,22 +1,51 @@
 <!doctype html>
+<!--
+    Licença: Domínio Público
+    Codigo Fonte: https://github.com/covid-taskforce-cplp/calculadora-covid-por-pais
+-->
+
 <html lang="pt">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./css/codigo-terceiros/bootstrap.min.css">
+  <title>calculadora-covid-por-pais v0.1.0</title>
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body>
+  <div class="container">
+    <h1>calculadora-covid-por-pais v0.1.0</h1>
+    <p>
+      Discussão em <a href="https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/">https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/</a>.
+    </p>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">População</label>
+        <input type="text" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="209300000">
+        <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região. Ex.: 209.300.000 é população do 🇧🇷 Brasil</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">População infectada (%)</label>
+        <input type="text" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
+        <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">População</label>
+        <input type="text" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
+        <small id="epidemia-letalidade-media-dica" class="form-text text-muted">Informe um percentual. Aceita virgulas e pontos como separador</small>
+      </div>
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+      <div id="resultado-vivos"></div>
+      <div id="resultado-obitos"></div>
+    </form>
+  </div>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <script src="./js/codigo-terceiros/jquery-3.4.1.slim.min.js"></script>
+  <script src="./js/codigo-terceiros/popper.min.js"></script>
+  <script src="./js/codigo-terceiros/bootstrap.min.js"></script>
+  <script src="./js/calculadora-inicializacao.js"></script>
+  <script src="./js/calculadora-logica.js"></script>
+  <script src="./js/calculadora-ui.js"></script>
+</body>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
 </html>
