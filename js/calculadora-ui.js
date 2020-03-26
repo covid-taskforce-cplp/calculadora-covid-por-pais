@@ -11,20 +11,36 @@
 
 console.log('calculadora-ui.js carregado');
 
-var populacaoTotal = jQuery('#populacao-total').val().replace(/[^0-9]/g, '');
-var populacaoInfectadaPercentual = jQuery('#populacao-infectada-percentual').val();
-var letalidadeInfeccao = jQuery('#epidemia-letalidade-media').val();
+function covidUIAtualizacao() {
+  var populacaoTotal = jQuery('#populacao-total').val().replace(/[^0-9]/g, '');
+  var populacaoInfectadaPercentual = jQuery('#populacao-infectada-percentual').val();
+  var letalidadeInfeccao = jQuery('#epidemia-letalidade-media').val();
+  var populacaoObito = covidLetalidadeSimplificada(populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao);
 
-console.log(populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao);
+  // https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+  function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  }
 
-// https://blog.abelotech.com/posts/number-currency-formatting-javascript/
-function formatNumber(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  // console.log('populacaoObito', populacaoObito);
+  // console.log('populacaoObito', formatNumber(populacaoObito));
+  if (document.getElementById('termos-de-uso').checked) {
+    jQuery('#resultado-total-inicial').html(formatNumber(populacaoTotal));
+    jQuery('#resultado-vivos').html(formatNumber(populacaoTotal - populacaoObito));
+    jQuery('#resultado-obitos').html(formatNumber(populacaoObito));
+    console.log('covidUIAtualizacao', populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao, populacaoObito);
+  } else {
+    console.log('covidUIAtualizacao','termos de uso nao foram aceitos. Negando-se a atualizar interface');
+  }
+  
 }
 
-var populacaoObito = covidLetalidadeSimplificada(populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao);
-// console.log('populacaoObito', populacaoObito);
-// console.log('populacaoObito', formatNumber(populacaoObito));
-jQuery('#resultado-total-inicial').html(formatNumber(populacaoTotal));
-jQuery('#resultado-vivos').html(formatNumber(populacaoTotal - populacaoObito));
-jQuery('#resultado-obitos').html(formatNumber(populacaoObito));
+// O calculo é executado imediatamente quando a página é atualizada
+// covidUIAtualizacao();
+// jQuery(document).ready(covidUIAtualizacao);
+
+jQuery('#populacao-total, #populacao-infectada-percentual, #epidemia-letalidade-media').on("change", covidUIAtualizacao);
+jQuery('#formulario-simulacao').on("submit", function(e) {
+  covidUIAtualizacao();
+  e.preventDefault();
+});

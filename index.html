@@ -9,13 +9,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="./css/codigo-terceiros/bootstrap.min.css">
-  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.1.0</title>
+  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.2.0</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.1.0</h1>
-    <form>
+    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.2.0 <sup>alpha</sup></h1>
+    
+    <form id="formulario-simulacao">
       <div class="row">
         <div class="col-sm">
           <div class="form-group">
@@ -36,6 +37,8 @@
         </div>
       </div>
 
+      <hr />
+
       <div class="row">
         <div class="col-sm">
           <div class="form-group">
@@ -55,22 +58,94 @@
           </div>
           <div class="form-group">
             <label for="epidemia-letalidade-media">Letalidade infecção</label>
-            <input type="number" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="1">
-            <small id="epidemia-letalidade-media-dica" class="form-text text-muted">Informe um percentual. Aceita virgulas e pontos como separador</small>
+            <small id="epidemia-letalidade-media-dica" class="form-text text-muted">
+              Nesta versão, ainda não é possível especificar letalidade por faixa de idade.
+              Por favor use uma média global.
+            </small>
+            <!-- <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="validationTooltipUsernamePrepend">0-99+</span>
+              </div>
+              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+              <div class="invalid-tooltip">
+                Please choose a unique and valid username.
+              </div>
+            </div> -->
+            
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">0-99+</span>
+              </div>
+              <!--
+                NOTA: na minha opinião o formulario nem mesmo deveria permitir
+                      simular acima de 30%; a justificativa é que não encontrei
+                      na literatura (mesmo se não tiver qualquer tratamento
+                      médico e pessoa em idade avançada) uma letalidade maior
+                      que uns 20~25% (fititnt, 2020-13-26 16:56 BRT)
+              -->
+              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="0.5">
+            </div>
+            
           </div>
         </div>
       </div>
-      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-      <div>
-        Total inicial: <span id="resultado-total-inicial"></span>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-primary" id="recalcular">Calcular simulação</button>
+        </div>
       </div>
-      <div>
-        Total vivos: <span id="resultado-vivos"></span>
+       <div class="row">
+         <div class="col-sm-12">
+           <br>
+          <div class="form-check">
+             <input type="checkbox" class="form-check-input" id="termos-de-uso" checked>
+             <label class="form-check-label" for="termos-de-uso">
+               Sim, eu aceito os <a href="#" onclick="jQuery('#aviso-de-limitacoes').toggle();">
+                 termos de uso, e entendo que este tipo de simulação tem limitações
+               </a>
+             </label>
+           </div>
+           <div id="aviso-de-limitacoes" class="alert alert-warning" role="alert" style="display: none">
+             TODO: adicionar não apenas avisos de isenção de responsabilidade
+               mas também problemas mais óbvios de usar esse tipo de
+               simulação assumindo pessoas que não vão ler as referências
+               no tema.
+           </div>
+         </div>
       </div>
-      <div>
-        Total óbitos: <span id="resultado-obitos"></span>
-      </div>
+      <hr />
+
     </form>
+
+    <h2 id="resultados">Resultado simulação atual</h2>
+
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <div class="alert alert-info" role="alert">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Faixa-etária</th>
+            <th scope="col">Total inicial</th>
+            <th scope="col">Total sobrevivente</th>
+            <th scope="col">Total óbitos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">0-99+</th>
+            <td><span id="resultado-total-inicial"></span></td>
+            <td><span id="resultado-vivos"></span></td>
+            <td><span id="resultado-obitos" class="text-danger"></span></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <ol>
+      <li>Funcionalidade de pré-carregar população pré-definida ainda não funciona; usuário precisa informar manualmente</li>
+
+      <li>A simulação atual não permite especificar faixas de idade</li>
+    </ol>
     <hr />
     <div>
       <h2 id="referencias">Referências</h2>
