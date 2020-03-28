@@ -15,3 +15,6 @@
 */
 
 console.log('calculadora-inicializacao.js carregado');
+
+
+// @see https://github.com/julien-maurel/js-storage
