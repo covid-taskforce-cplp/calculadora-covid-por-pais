@@ -60,55 +60,55 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;&nbsp;0-10</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-0-10" placeholder="População de 0 a 10 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-0-ate-10" placeholder="População de 0 a 10 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;11-20</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-11-20" placeholder="População de 11 a 20 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-11-ate-20" placeholder="População de 11 a 20 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;21-30</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-21-30" placeholder="População de 21 a 30 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-21-ate-30" placeholder="População de 21 a 30 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;31-40</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-31-40" placeholder="População de 31 a 40 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-31-ate-40" placeholder="População de 31 a 40 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;41-50</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-41-50" placeholder="População de 41 a 50 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-41-ate-50" placeholder="População de 41 a 50 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;51-60</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-51-60" placeholder="População de 51 a 60 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-51-ate-60" placeholder="População de 51 a 60 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;61-70</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-61-70" placeholder="População de 61 a 60 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-61-ate-70" placeholder="População de 61 a 60 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">&nbsp;71-80</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-71-80" placeholder="População de 71 a 80 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-71-ate-80" placeholder="População de 71 a 80 anos" value="">
               </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">81-120</span>
                 </div>
-                <input type="number" class="form-control" id="populacao-total-81-120" placeholder="População de 81 a 120 anos" value="">
+                <input type="number" class="form-control" id="populacao-total-de-81-ate-120" placeholder="População de 81 a 120 anos" value="">
               </div>
             </div>
 
@@ -140,45 +140,167 @@
         </div>
         <div class="col-sm">
           <div class="form-group">
-            <label for="populacao-infectada-percentual">População infectada (%)</label>
-            <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Percentual de da população total que <strong><em>no final</em></strong> da epidemia na região teria sido contamidana</small>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">0-120</span>
+            <div class="populacao-infectada-percentual-simples-campos" style="display: block">
+              <label for="populacao-infectada-percentual">Percentual de pessoas infectadas</label>
+              <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Percentual de da população total que <strong><em>no final</em></strong> da epidemia na região teria sido contamidana</small>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">0-120</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="% de pessoas infectadas" required value="">
               </div>
-              <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" required value="">
+            </div>
+            <div class="populacao-infectada-percentual-simples-campos" style="display:none">
+              <label>Percentual de pessoas infectadas</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;&nbsp;0-10</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-0-ate-10" placeholder="% de pessoas infectadas de 0 a 10 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;11-20</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-11-ate-20" placeholder="% de pessoas infectadas de 11 a 20 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;21-30</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-21-ate-30" placeholder="% de pessoas infectadas de 21 a 30 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;31-40</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-31-ate-40" placeholder="% de pessoas infectadas de 31 a 40 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;41-50</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-41-ate-50" placeholder="% de pessoas infectadas de 41 a 50 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;51-60</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-51-ate-60" placeholder="% de pessoas infectadas de 51 a 60 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;61-70</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-61-ate-70" placeholder="% de pessoas infectadas de 61 a 70 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;71-80</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-71-ate-80" placeholder="% de pessoas infectadas de 71 a 80 anos" required value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">81-120</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-infectada-percentual-81-ate-120" placeholder="% de pessoas infectadas de 81 a 120 anos" required value="">
+              </div>
+            </div>
+
+            <div class="form-check populacao-simples-campos" style="display: none">
+              <input type="checkbox" class="form-check-input" id="populacao-infectada-percentual-simples" checked onclick="jQuery('.populacao-infectada-percentual-simples-campos').toggle()">
+              <label class="form-check-label" for="populacao-infectada-percentual-simples">Simples (change de ser infactado padrão para todas as idades)</label>
             </div>
           </div>
           <div class="form-group">
-            <label for="epidemia-letalidade-media">Letalidade infecção</label>
-            <small id="epidemia-letalidade-media-dica" class="form-text text-muted">
-              Nesta versão, ainda não é possível especificar letalidade por faixa de idade.
-              Por favor use uma média global.
-            </small>
-            <!-- <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="validationTooltipUsernamePrepend">0-120</span>
+            <div class="letalidade-simples-campos" style="display: block">
+              <label for="epidemia-letalidade-media">Letalidade infecção</label>
+              <small id="epidemia-letalidade-media-dica" class="form-text text-muted">
+                Nesta versão, ainda não é possível especificar letalidade por faixa de idade.
+                Por favor use uma média global.
+              </small>
+              <!-- <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="validationTooltipUsernamePrepend">0-120</span>
+                </div>
+                <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                <div class="invalid-tooltip">
+                  Please choose a unique and valid username.
+                </div>
+              </div> -->
+              
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">0-120</span>
+                </div>
+                <!--
+                  NOTA: na minha opinião o formulario nem mesmo deveria permitir
+                        simular acima de 30%; a justificativa é que não encontrei
+                        na literatura (mesmo se não tiver qualquer tratamento
+                        médico e pessoa em idade avançada) uma letalidade maior
+                        que uns 20~25% (fititnt, 2020-13-26 16:56 BRT)
+                -->
+                <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" required value="">
               </div>
-              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
-              <div class="invalid-tooltip">
-                Please choose a unique and valid username.
-              </div>
-            </div> -->
-            
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">0-120</span>
-              </div>
-              <!--
-                NOTA: na minha opinião o formulario nem mesmo deveria permitir
-                      simular acima de 30%; a justificativa é que não encontrei
-                      na literatura (mesmo se não tiver qualquer tratamento
-                      médico e pessoa em idade avançada) uma letalidade maior
-                      que uns 20~25% (fititnt, 2020-13-26 16:56 BRT)
-              -->
-              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" required value="">
             </div>
             
+            <div class="letalidade-simples-campos" style="display: none">
+              <label for="epidemia-letalidade-media">Letalidade infecção por faixa de idade</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;&nbsp;0-10</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-0-ate-10" placeholder="Letalidade de 0 a 10 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;11-20</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-11-ate-20" placeholder="Letalidade de 11 a 20 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;31-40</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-31-ate-40" placeholder="Letalidade de 31 a 40 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;41-50</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-41-ate-50" placeholder="Letalidade de 41 a 50 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;51-60</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-51-ate-60" placeholder="Letalidade de 51 a 60 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;61-70</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-61-ate-70" placeholder="Letalidade de 61 a 70 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;71-80</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-71-ate-80" placeholder="Letalidade de 71 a 80 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;81-120</span>
+                </div>
+                <input type="number" class="form-control" id="letalidade-81-ate-120" placeholder="Letalidade de 81 a 120 anos" value="">
+              </div>
+            </div>
+
+            <div class="form-check populacao-simples-campos" style="display: none">
+              <input type="checkbox" class="form-check-input" id="letalidade-simples" checked onclick="jQuery('.letalidade-simples-campos').toggle()">
+              <label class="form-check-label" for="letalidade-simples">Simples (letalidade padrão para todas as idades)</label>
+            </div>
           </div>
         </div>
       </div>
@@ -225,11 +347,59 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="populacao-simples-campos" style="display: block">
+          <tr class="populacao-simples-campos">
             <th scope="row">0-120</th>
             <td><span id="resultado-total-inicial"></span></td>
             <td><span id="resultado-vivos"></span></td>
             <td><span id="resultado-obitos" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">0-10</th>
+            <td><span id="resultado-total-inicial-de-0-ate-10"></span></td>
+            <td><span id="resultado-vivos-de-0-ate-10"></span></td>
+            <td><span id="resultado-obitos-de-0-ate-10" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">11-20</th>
+            <td><span id="resultado-total-inicial-de-11-ate-20"></span></td>
+            <td><span id="resultado-vivos-de-11-ate-20"></span></td>
+            <td><span id="resultado-obitos-de-11-ate-20" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">21-30</th>
+            <td><span id="resultado-total-inicial-de-21-ate-30"></span></td>
+            <td><span id="resultado-vivos-de-21-ate-30"></span></td>
+            <td><span id="resultado-obitos-de-21-ate-30" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">31-40</th>
+            <td><span id="resultado-total-inicial-de-31-ate-40"></span></td>
+            <td><span id="resultado-vivos-de-31-ate-40"></span></td>
+            <td><span id="resultado-obitos-de-31-ate-40" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">51-40</th>
+            <td><span id="resultado-total-inicial-de-51-ate-40"></span></td>
+            <td><span id="resultado-vivos-de-51-ate-40"></span></td>
+            <td><span id="resultado-obitos-de-51-ate-40" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">51-60</th>
+            <td><span id="resultado-total-inicial-de-51-ate-60"></span></td>
+            <td><span id="resultado-vivos-de-51-ate-60"></span></td>
+            <td><span id="resultado-obitos-de-51-ate-60" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">71-80</th>
+            <td><span id="resultado-total-inicial-de-71-ate-80"></span></td>
+            <td><span id="resultado-vivos-de-71-ate-80"></span></td>
+            <td><span id="resultado-obitos-de-71-ate-80" class="text-danger"></span></td>
+          </tr>
+          <tr class="populacao-simples-campos" style="display: none">
+            <th scope="row">81-120</th>
+            <td><span id="resultado-total-inicial-de-81-ate-120"></span></td>
+            <td><span id="resultado-vivos-de-81-ate-120"></span></td>
+            <td><span id="resultado-obitos-de-81-ate-120" class="text-danger"></span></td>
           </tr>
         </tbody>
       </table>
