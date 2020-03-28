@@ -19,6 +19,19 @@ dados_populacao_brasil_rs = {
   populacaoTotal: 11329605,
   _metadata: "11 329 605 hab. (2018) estimada. https://pt.wikipedia.org/wiki/Rio_Grande_do_Sul"
 }
+dados_populacao_debug = {
+  populacaoTotal: 106040,
+  populacaoTotalDe0Ate10: 10,
+  populacaoTotalDe11Ate20: 1120,
+  populacaoTotalDe21Ate30: 2130,
+  populacaoTotalDe31Ate40: 3140,
+  populacaoTotalDe41Ate50: 4150,
+  populacaoTotalDe51Ate60: 5160,
+  populacaoTotalDe61Ate70: 6170,
+  populacaoTotalDe71Ate80: 7180,
+  populacaoTotalDe81Ate120: 81120,
+  _metadata: "Depuração. Ignore isto aqui"
+}
 
 dados_cenario_customizado = {
   _metadata: "Customizado"
