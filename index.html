@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="./css/codigo-terceiros/bootstrap.min.css">
-  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.3.0</title>
+  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.4.0</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.3.0 <sup>alpha</sup></h1>
+    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.4.0 <sup>alpha</sup></h1>
 
     <!--
       TODO: os campos que envolvem numeros grandes, como 209300000, poderiam
@@ -44,13 +44,77 @@
         </div>
         <div class="col-sm">
           <div class="form-group">
-            <label for="populacao-total">População Total</label>
-            <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região.</small>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">0-120</span>
+            <div class="populacao-simples-campos" style="display: block">
+              <label for="populacao-total">População Total</label>
+              <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região.</small>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">0-120</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" required value="">
               </div>
-              <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" required value="">
+            </div>
+            <div class="populacao-simples-campos" style="display: none">
+              <label for="populacao-total">População Total por faixa de idade</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;&nbsp;0-10</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-0-10" placeholder="População de 0 a 10 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;11-20</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-11-20" placeholder="População de 11 a 20 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;21-30</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-21-30" placeholder="População de 21 a 30 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;31-40</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-31-40" placeholder="População de 31 a 40 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;41-50</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-41-50" placeholder="População de 41 a 50 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;51-60</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-51-60" placeholder="População de 51 a 60 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;61-70</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-61-70" placeholder="População de 61 a 60 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">&nbsp;71-80</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-71-80" placeholder="População de 71 a 80 anos" value="">
+              </div>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">81-120</span>
+                </div>
+                <input type="number" class="form-control" id="populacao-total-81-120" placeholder="População de 81 a 120 anos" value="">
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="populacao-simples" checked onclick="jQuery('.populacao-simples-campos').toggle()">
+              <label class="form-check-label" for="populacao-simples">Simples (sem faixas de idade)</label>
             </div>
           </div>
         </div>
@@ -161,7 +225,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="populacao-simples-campos" style="display: block">
             <th scope="row">0-120</th>
             <td><span id="resultado-total-inicial"></span></td>
             <td><span id="resultado-vivos"></span></td>

@@ -21,4 +21,4 @@ console.log('calculadora-inicializacao.js carregado');
 var ns=Storages.initNamespaceStorage('ns_padrao');
 
 // storage: variavel global
-storage=Storages.localStorage
+storage=Storages.localStorage;
