@@ -15,19 +15,31 @@
 <body>
   <div class="container">
     <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.3.0 <sup>alpha</sup></h1>
-    
+
+    <!--
+      TODO: os campos que envolvem numeros grandes, como 209300000, poderiam
+            ser alterados para visualmente exibir 209 300 000 ou
+            209.300.000 e facilitar para usuário ter ideia da quantidade.
+            (fititnt, 2020-03-28 00:26 BRT)
+
+      TODO: os campos que aceitam numeros poderiam permitir colar valores
+            com pontos ou espaços em vez de forçar o usuário a inserir
+            apenas números
+            (fititnt, 2020-03-28 00:26 BRT)
+    -->
+
     <form id="formulario-simulacao">
       <div class="row">
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-sugestao">População pré-definidas</label>
             <select class="form-control" id="populacao-sugestao" aria-describedby="populacao-dica">
-              <option data-var="dados_populacao_customizado">Customizado</option>
+              <option data-var="dados_populacao_customizado" selected>Customizado</option>
               <option data-var="dados_populacao_brasil">🇧🇷 Brasil</option>
               <option data-var="dados_populacao_brasil_rs">🇧🇷 Brasil, Rio Grande do Sul</option>
             </select>
             <small id="populacao-sugestao-dica" class="form-text text-muted">Além de usar valores customizados, você pode aceitar sugestões pré-definidas</small>
-            <div id="populacao-sugestao-metadata">Customizado</div>
+            <div class="form-text text-muted"><small>Fonte: <em><span id="populacao-sugestao-metadata">Customizado</span></em></small></div>
           </div>
         </div>
         <div class="col-sm">
@@ -44,12 +56,13 @@
       <div class="row">
         <div class="col-sm">
           <div class="form-group">
-            <label for="populacao-infectada-percentual-sugestao">População infectada (%) pré-definidas</label>
-            <select class="form-control" id="populacao-infectada-percentual-sugestao" aria-describedby="populacao-infectada-percentual-dica" disabled>
-              <option>Customizado</option>
-              <option>🇧🇷 Brasil</option>
+            <label for="cenario-sugestao">Cenários pré-definidos</label>
+            <select class="form-control" id="cenario-sugestao" aria-describedby="cenario-dica" disabled>
+              <option data-var="dados_cenario_customizado" selected>Customizado</option>
+              <option data-var="dados_cenario_alemanha">🇩🇪 Alemanha, 2020-03-26</option>
             </select>
-            <small id="populacao-infectada-percentual-sugestao-dica" class="form-text text-muted">Estimativas sugeridas conforme relatórios oficiais</small>
+            <small id="cenario-dica" class="form-text text-muted">Estimativas sugeridas conforme relatórios oficiais</small>
+            <div class="form-text text-muted"><small>Fonte: <em><span id="cenario-metadata">Customizado</span></em></small></div>
           </div>
         </div>
         <div class="col-sm">

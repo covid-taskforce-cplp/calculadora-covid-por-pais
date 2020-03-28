@@ -50,6 +50,30 @@ function covidUIAtualizacaoResultado() {
   console.log('covidUIAtualizacao', populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao, populacaoObito);
 }
 
+function covidUIAtualizacaoPredefinidaPopulacao(ev){
+  var nome_variavel = jQuery(ev.target).children("option:selected").data('var');
+  var dados = window[nome_variavel];
+  // console.log('covidUIAtualizacaoPredefinidaPopulacao: nome da variavel global', nome_variavel);
+  // console.log('covidUIAtualizacaoPredefinidaPopulacao: nome da variavel valor', window[nome_variavel]);
+
+  jQuery('#populacao-sugestao-metadata').html(dados._metadata);
+  jQuery('#populacao-total').val(dados.populacaoTotal);
+  /*
+  console.log(ev)
+  console.log(jQuery(ev.target).children("option:selected"))
+  console.log(jQuery(ev.target).children("option:selected").data('var'))
+  console.log('oi')
+  // console.log(ev.value)
+  // console.log(ev.target)
+  console.log(jQuery(ev).children("option:selected"))
+  console.log(jQuery(ev).children("option:selected").target)
+  console.log(jQuery(ev).children("option:selected")[0])
+  console.log(jQuery(ev).children("option:selected").val())
+  console.log(jQuery(ev).children("option:selected").data('var'))
+  // console.log(jQuery(ev).children("option:selected").attr('data-var'))
+  */
+}
+
 /**
  * Sincroniza o que quer que esteja na interface com localStorage
  */
@@ -94,6 +118,7 @@ covidUIInicializacao();
 
 // Adiciona ouvinte de eventos em certos elementos chaves da interface
 jQuery('#populacao-total, #populacao-infectada-percentual, #epidemia-letalidade-media').on("change", covidUIAtualizacao);
+jQuery('#populacao-sugestao').on("change", covidUIAtualizacaoPredefinidaPopulacao);
 jQuery('#resetar').on("click", covidUIResetar);
 jQuery('#formulario-simulacao').on("submit", function(e) {
   covidUIAtualizacao();

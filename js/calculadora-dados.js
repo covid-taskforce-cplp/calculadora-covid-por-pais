@@ -14,7 +14,16 @@ dados_populacao_brasil = {
   populacaoTotal: 209300000,
   _metadata: "209,3 milhões (2017), As fontes incluem: Banco Mundial, Departamento do Censo dos Estados Unidos"
 }
+
 dados_populacao_brasil_rs = {
   populacaoTotal: 11329605,
   _metadata: "11 329 605 hab. (2018) estimada. https://pt.wikipedia.org/wiki/Rio_Grande_do_Sul"
+}
+
+dados_cenario_customizado = {
+  _metadata: "Customizado"
+}
+dados_cenario_alemanha = {
+  letalidadeInfeccao: 0.56,
+  _metadata: "(rascunho) Alemanha em 2020-03-26. https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/26/com-500-mil-testes-por-semana-alemanha-tem-uma-das-menores-taxas-de-letalidade-por-covid-19-na-europa.ghtml"
 }
