@@ -20,12 +20,14 @@
       <div class="row">
         <div class="col-sm">
           <div class="form-group">
-            <label for="populacao-total-sugestao">População pré-definidas</label>
-            <select class="form-control" id="populacao-total-sugestao" aria-describedby="populacao-total-dica" disabled>
-              <option>Customizado</option>
-              <option>🇧🇷 Brasil</option>
+            <label for="populacao-sugestao">População pré-definidas</label>
+            <select class="form-control" id="populacao-sugestao" aria-describedby="populacao-dica">
+              <option data-var="dados_populacao_customizado">Customizado</option>
+              <option data-var="dados_populacao_brasil">🇧🇷 Brasil</option>
+              <option data-var="dados_populacao_brasil_rs">🇧🇷 Brasil, Rio Grande do Sul</option>
             </select>
-            <small id="populacao-total-sugestao-dica" class="form-text text-muted">Você pode escolher uma sugestão de região em vez de customizar população total</small>
+            <small id="populacao-sugestao-dica" class="form-text text-muted">Além de usar valores customizados, você pode aceitar sugestões pré-definidas</small>
+            <div id="populacao-sugestao-metadata">Customizado</div>
           </div>
         </div>
         <div class="col-sm">
@@ -183,6 +185,7 @@
     <div class="alert alert-secondary" role="alert">
       Discussão em <a href="https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/">https://www.facebook.com/groups/coronaviruscplp/permalink/539215950056726/</a>
       <sup>(requer convite, fale com membros antes)</sup>. <br>
+      GitHub <a href="https://github.com/covid-taskforce-cplp/calculadora-covid-por-pais">https://github.com/covid-taskforce-cplp/calculadora-covid-por-pais</a>. <br>
       Como é feito o cálculo? Veja <a href="https://github.com/covid-taskforce-cplp/calculadora-covid-por-pais/blob/master/js/calculadora-logica.js">js/calculadora-logica.js</a>.
     </div>
 
@@ -193,6 +196,7 @@
   <script src="./js/codigo-terceiros/bootstrap.min.js"></script>
   <script src="./js/codigo-terceiros/js.storage.min.js"></script>
   <script src="./js/calculadora-inicializacao.js"></script>
+  <script src="./js/calculadora-dados.js"></script>
   <script src="./js/calculadora-logica.js"></script>
   <script src="./js/calculadora-ui.js"></script>
 </body>
