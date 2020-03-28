@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="./css/codigo-terceiros/bootstrap.min.css">
-  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.2.0</title>
+  <title>covid-taskforce-cplp/calculadora-covid-por-pais v0.3.0</title>
 </head>
 
 <body>
   <div class="container">
-    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.2.0 <sup>alpha</sup></h1>
+    <h1>covid-taskforce-cplp/calculadora-covid-por-pais v0.3.0 <sup>alpha</sup></h1>
     
     <form id="formulario-simulacao">
       <div class="row">
@@ -31,8 +31,8 @@
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-total">População Total</label>
-            <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="209300000">
-            <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região. Ex.: 209.300.000 é população do 🇧🇷 Brasil</small>
+            <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="">
+            <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região.</small>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-infectada-percentual">População infectada (%)</label>
-            <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="60">
+            <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="">
             <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
           </div>
           <div class="form-group">
@@ -64,7 +64,7 @@
             </small>
             <!-- <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="validationTooltipUsernamePrepend">0-99+</span>
+                <span class="input-group-text" id="validationTooltipUsernamePrepend">0-120</span>
               </div>
               <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
               <div class="invalid-tooltip">
@@ -74,7 +74,7 @@
             
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text">0-99+</span>
+                <span class="input-group-text">0-120</span>
               </div>
               <!--
                 NOTA: na minha opinião o formulario nem mesmo deveria permitir
@@ -83,7 +83,7 @@
                       médico e pessoa em idade avançada) uma letalidade maior
                       que uns 20~25% (fititnt, 2020-13-26 16:56 BRT)
               -->
-              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="0.5">
+              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="">
             </div>
             
           </div>
@@ -92,6 +92,7 @@
       <div class="row">
         <div class="col-sm-12">
           <button type="submit" class="btn btn-primary" id="recalcular">Calcular simulação</button>
+          <button type="button" class="btn btn-secondary" id="resetar" title="Limpa dados salvos e recarrega página">Resetar</button>
         </div>
       </div>
        <div class="row">
@@ -132,7 +133,7 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">0-99+</th>
+            <th scope="row">0-120</th>
             <td><span id="resultado-total-inicial"></span></td>
             <td><span id="resultado-vivos"></span></td>
             <td><span id="resultado-obitos" class="text-danger"></span></td>

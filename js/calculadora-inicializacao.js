@@ -18,3 +18,7 @@ console.log('calculadora-inicializacao.js carregado');
 
 
 // @see https://github.com/julien-maurel/js-storage
+var ns=Storages.initNamespaceStorage('ns_padrao');
+
+// storage: variavel global
+storage=Storages.localStorage
