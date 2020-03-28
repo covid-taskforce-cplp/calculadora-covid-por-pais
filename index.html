@@ -33,20 +33,25 @@
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-sugestao">População pré-definidas</label>
+            <small id="populacao-sugestao-dica" class="form-text text-muted">Além de usar valores customizados, você pode aceitar sugestões pré-definidas</small>
             <select class="form-control" id="populacao-sugestao" aria-describedby="populacao-dica">
               <option data-var="dados_populacao_customizado" selected>Customizado</option>
               <option data-var="dados_populacao_brasil">🇧🇷 Brasil</option>
               <option data-var="dados_populacao_brasil_rs">🇧🇷 Brasil, Rio Grande do Sul</option>
             </select>
-            <small id="populacao-sugestao-dica" class="form-text text-muted">Além de usar valores customizados, você pode aceitar sugestões pré-definidas</small>
             <div class="form-text text-muted"><small>Fonte: <em><span id="populacao-sugestao-metadata">Customizado</span></em></small></div>
           </div>
         </div>
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-total">População Total</label>
-            <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" value="">
             <small id="populacao-total-dica" class="form-text text-muted">Informe a população total da região.</small>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">0-120</span>
+              </div>
+              <input type="number" class="form-control" id="populacao-total" aria-describedby="populacao-total-dica" placeholder="População total" required value="">
+            </div>
           </div>
         </div>
       </div>
@@ -57,19 +62,28 @@
         <div class="col-sm">
           <div class="form-group">
             <label for="cenario-sugestao">Cenários pré-definidos</label>
-            <select class="form-control" id="cenario-sugestao" aria-describedby="cenario-dica" disabled>
-              <option data-var="dados_cenario_customizado" selected>Customizado</option>
-              <option data-var="dados_cenario_alemanha">🇩🇪 Alemanha, 2020-03-26</option>
-            </select>
             <small id="cenario-dica" class="form-text text-muted">Estimativas sugeridas conforme relatórios oficiais</small>
+            <select class="form-control" id="cenario-sugestao" aria-describedby="cenario-dica">
+              <option data-var="" selected>Customizado</option>
+              <option data-var="dados_cenario_alemanha">🇩🇪 Alemanha, 2020-03-26</option>
+              <option data-var="dados_cenario_10p_infeccao_01letalidade">10% da população, 0,1% letal</option>
+              <option data-var="dados_cenario_10p_infeccao_05letalidade">10% da população, 0,5% letal</option>
+              <option data-var="dados_cenario_50p_infeccao_01letalidade">50% da população, 0,1% letal</option>
+              <option data-var="dados_cenario_50p_infeccao_05letalidade">50% da população, 0,5% letal</option>
+            </select>
             <div class="form-text text-muted"><small>Fonte: <em><span id="cenario-metadata">Customizado</span></em></small></div>
           </div>
         </div>
         <div class="col-sm">
           <div class="form-group">
             <label for="populacao-infectada-percentual">População infectada (%)</label>
-            <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" value="">
-            <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Valor de 0 a 100. Representa o % de da população total que <em>no final</em> da epidemia na região teria sido contamidana</small>
+            <small id="populacao-infectada-percentual-dica" class="form-text text-muted">Percentual de da população total que <strong><em>no final</em></strong> da epidemia na região teria sido contamidana</small>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">0-120</span>
+              </div>
+              <input type="number" class="form-control" id="populacao-infectada-percentual" aria-describedby="populacao-infectada-percentual-dica" placeholder="População total" required value="">
+            </div>
           </div>
           <div class="form-group">
             <label for="epidemia-letalidade-media">Letalidade infecção</label>
@@ -98,7 +112,7 @@
                       médico e pessoa em idade avançada) uma letalidade maior
                       que uns 20~25% (fititnt, 2020-13-26 16:56 BRT)
               -->
-              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" value="">
+              <input type="number" min="0" max="30" step="0.01" class="form-control" id="epidemia-letalidade-media" aria-describedby="epidemia-letalidade-media-dica" placeholder="Informe um percentual" required value="">
             </div>
             
           </div>

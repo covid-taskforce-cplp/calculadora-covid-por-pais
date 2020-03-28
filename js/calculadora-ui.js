@@ -50,6 +50,19 @@ function covidUIAtualizacaoResultado() {
   console.log('covidUIAtualizacao', populacaoTotal, populacaoInfectadaPercentual, letalidadeInfeccao, populacaoObito);
 }
 
+function covidUIAtualizacaoPredefinidaCenario(ev){
+  var nome_variavel = jQuery(ev.target).children("option:selected").data('var');
+  if (!nome_variavel) {
+    return '';
+  }
+  var dados = window[nome_variavel];
+  console.log('covidUIAtualizacaoPredefinidaCenario', nome_variavel, dados);
+
+  jQuery('#cenario-metadata').html(dados._metadata);
+  jQuery('#populacao-infectada-percentual').val(dados.populacaoInfectadaPercentual);
+  jQuery('#epidemia-letalidade-media').val(dados.letalidadeInfeccao);
+}
+
 function covidUIAtualizacaoPredefinidaPopulacao(ev){
   var nome_variavel = jQuery(ev.target).children("option:selected").data('var');
   var dados = window[nome_variavel];
@@ -118,6 +131,7 @@ covidUIInicializacao();
 
 // Adiciona ouvinte de eventos em certos elementos chaves da interface
 jQuery('#populacao-total, #populacao-infectada-percentual, #epidemia-letalidade-media').on("change", covidUIAtualizacao);
+jQuery('#cenario-sugestao').on("change", covidUIAtualizacaoPredefinidaCenario);
 jQuery('#populacao-sugestao').on("change", covidUIAtualizacaoPredefinidaPopulacao);
 jQuery('#resetar').on("click", covidUIResetar);
 jQuery('#formulario-simulacao').on("submit", function(e) {

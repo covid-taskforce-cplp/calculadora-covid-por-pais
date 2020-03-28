@@ -24,6 +24,28 @@ dados_cenario_customizado = {
   _metadata: "Customizado"
 }
 dados_cenario_alemanha = {
+  populacaoInfectadaPercentual: "",
   letalidadeInfeccao: 0.56,
   _metadata: "(rascunho) Alemanha em 2020-03-26. https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/26/com-500-mil-testes-por-semana-alemanha-tem-uma-das-menores-taxas-de-letalidade-por-covid-19-na-europa.ghtml"
+}
+
+dados_cenario_10p_infeccao_01letalidade = {
+  populacaoInfectadaPercentual: "10",
+  letalidadeInfeccao: 0.1,
+  _metadata: "10% de infecção, 0,1% de letalidade"
+}
+dados_cenario_10p_infeccao_05letalidade = {
+  populacaoInfectadaPercentual: "10",
+  letalidadeInfeccao: 0.5,
+  _metadata: "10% de infecção, 0,5% de letalidade"
+}
+dados_cenario_50p_infeccao_01letalidade = {
+  populacaoInfectadaPercentual: "50",
+  letalidadeInfeccao: 0.1,
+  _metadata: "50% de infecção, 0,1% de letalidade"
+}
+dados_cenario_50p_infeccao_05letalidade = {
+  populacaoInfectadaPercentual: "50",
+  letalidadeInfeccao: 0.5,
+  _metadata: "50% de infecção, 0,5% de letalidade"
 }
