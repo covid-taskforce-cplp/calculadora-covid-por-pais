@@ -442,15 +442,15 @@
         <form>
           <div class="form-group">
             <ul>
-              <li><label for="formControlRange">População</label>
-                <input type="range" class="slider" id="populacao-total"></li>
-                <li><label for="formControlRange">Percentual Infectados</label>
-                <input type="range" class="slider" id="populacao-infectada-percentual" list="tickmarks"></li>
-                <li><label for="formControlRange">Percentual de letalidade</label>
-                <input type="range" class="slider" id="epidemia-letalidade-media" list="tickmarks"></li>
-            </ul>
-            <button type="submit" class="btn btn-primary" id="recalcular">Calcular simulação</button>
-            <button type="button" class="btn btn-outline-dark" id="resetar" title="Limpa dados salvos e recarrega página">Resetar</button>
+                <li><label for="formControlRange">Aumento de Percentual de letalidade</label>
+                <!--Multiplicar valores ja mockados-->
+                <input type="range" class="slider" id="epidemia-letalidade-mediaRange" list="tickmarks" value="0"></li>
+                <small id="epidemia-letalidade-media-dica" class="form-text text-muted">
+                  Ainda não é possível especificar o aumento de letalidade.
+                 Por favor <strong><em>use a média global</em></strong>.
+                 </small>
+              </ul>
+            <button type="submit" class="btn btn-outline-dark" id="recalcularRange">Calcular simulação</button>
             <datalist id="tickmarks">
               <option value="0" label="0%">
               <option value="10">
