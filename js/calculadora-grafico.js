@@ -1,5 +1,5 @@
 var ctx = document.getElementsByClassName("radar");
-
+//Os dados estão desatualizados, deve-se utilizar os dados do Imperial College
 var chartGraph= new Chart(ctx, {
     type:'line',
     data:{
