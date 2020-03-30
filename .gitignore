@@ -6,3 +6,5 @@ ajuda.sh
 
 # To make github stop warning about security issues on... static pages
 Gemfile.lock
+
+node_modules
