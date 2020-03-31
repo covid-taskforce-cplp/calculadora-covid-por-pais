@@ -12,10 +12,10 @@ dados_populacao_customizado = {
 }
 dados_populacao_brasil = {
   populacaoTotal: 209300000,
-  populacaototalde0ate19:1,
-  populacaototalde20ate39:2,
-  populacaototalde40ate59:3,
-  populacaototalde60:4,
+  populacaototalde0ate19:0,
+  populacaototalde20ate39:0,
+  populacaototalde40ate59:0,
+  populacaototalde60:0,
   _metadata: "209,3 milhões (2017), As fontes incluem: Banco Mundial, Departamento do Censo dos Estados Unidos"
 }
 
@@ -154,6 +154,38 @@ dados_populacao_brasil_df = {
   _metadata: "2 974 703 hab. (2018) estimada. https://pt.wikipedia.org/wiki/Distrito_Federal_(Brasil)"
 }
 
+dados_populacao_angola ={
+  populacaoTotal: 29310273,
+  _metadata: "29 310 273 hab. (2017) estimada. https://pt.wikipedia.org/wiki/Angola"
+}
+dados_populacao_caboVerde ={
+  populacaoTotal: 560899,
+  _metadata: "560 899 hab. (2017) estimada. https://pt.wikipedia.org/wiki/Cabo_Verde"
+}
+dados_populacao_guineBissau ={
+  populacaoTotal: 1792338,
+  _metadata: "1 792 338 hab. (2017) estimada. https://pt.wikipedia.org/wiki/Guin%C3%A9-Bissau"
+}
+dados_populacao_guineEquatorial ={
+  populacaoTotal: 1221490,
+  _metadata: "1 221 490 hab. (2016) estimada. https://pt.wikipedia.org/wiki/Guin%C3%A9_Equatorial"
+}
+dados_populacao_mocambique ={
+  populacaoTotal: 27909798,
+  _metadata: "27 909 798 hab. (Censo 2017). https://pt.wikipedia.org/wiki/Mo%C3%A7ambique"
+}
+dados_populacao_portugal ={
+  populacaoTotal: 10374822,
+  _metadata: "10 374 822 hab. (2014) estimada. https://pt.wikipedia.org/wiki/Portugal"
+}
+dados_populacao_stp ={
+  populacaoTotal: 204454,
+  _metadata: "204 454 hab. (2017) estimada. https://pt.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_e_Pr%C3%ADncipe"
+}
+dados_populacao_timorLeste ={
+  populacaoTotal: 1291358,
+  _metadata: "1 291 358 hab. (2017) estimada. https://pt.wikipedia.org/wiki/Timor-Leste"
+}
 
 
 dados_populacao_debug = {
