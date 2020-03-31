@@ -5,24 +5,24 @@ var chartGraph= new Chart(ctx, {
     data:{
         labels:["0 - 9","10 - 19","20 - 29","30 - 39","40 - 49","50 - 59","60 - 69", "70 - 79", "+80"],
         datasets:[{
-            label:"Óbitos",
-            data:[0,0.2,0.2,0.2,0.4,1.3,3.6,8.0,14.8],
+            label:"Casos sintomáticos exigindo hospitalização",
+            data:[100.1,100.3,101.2,103.2,104.9,110.2,116.6,124.3,127.3],
             borderWidth:6,
-            borderColor:'rgba(0, 123, 255,0.85)',
+            borderColor:'rgba(0, 123, 255,0.7)',
             backgroundColor: 'transparent',
         },
         {
-            label:"Complicações cardiovasculares",
-            data:[0,0.221,0.221,0.221,0.442,1.4365,3.978,8.84,16.354],
+            label:"Hospitalizados exigindo cuidados intensivos",
+            data:[5.0,5.0,5.0,5.0,6.3,12.2,27.4,43.2,70.9],
             borderWidth:6,
-            borderColor:'rgba(240, 52, 52, 0.25)',
+            borderColor:'rgba(255,165,0,0.7)',
             backgroundColor: 'transparent',
         },
         {
-            label:"Complicações por diabetes/Hipertensão/Cancer",
-            data:[0,0.212,0.212,0.212,0.424,1.378,3.816,8.48,15.688],
+            label:"Taxa de mortalidade pela infecção",
+            data:[0.002,0.006,0.03,0.08,0.15,0.60,2.2,5.1,9.3],
             borderWidth:6,
-            borderColor:'rgba(255,165,0,0.25)',
+            borderColor:'rgba(240, 52, 52, 0.8)',
             backgroundColor: 'transparent',
         }  
     ]

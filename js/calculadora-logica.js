@@ -25,3 +25,8 @@ function covidLetalidadeSimplificada(populacaoTotal, populacaoInfectadaPercentua
   var populacaoObito = populacaoInfectada * letalidadeInfeccao / 100;
   return populacaoObito;
 }
+
+function multiplicadorGrafico(epidemiaLetalidadeMediaRange){
+  var multiplicador = epidemiaLetalidadeMediaRange * multiplicador
+  return multiplicador;
+}

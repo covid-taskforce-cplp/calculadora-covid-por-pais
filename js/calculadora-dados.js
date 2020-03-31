@@ -12,6 +12,10 @@ dados_populacao_customizado = {
 }
 dados_populacao_brasil = {
   populacaoTotal: 209300000,
+  populacaototalde0ate19:1,
+  populacaototalde20ate39:2,
+  populacaototalde40ate59:3,
+  populacaototalde60:4,
   _metadata: "209,3 milhões (2017), As fontes incluem: Banco Mundial, Departamento do Censo dos Estados Unidos"
 }
 
@@ -194,4 +198,16 @@ dados_cenario_50p_infeccao_05letalidade = {
   populacaoInfectadaPercentual: "50",
   letalidadeInfeccao: 0.5,
   _metadata: "50% de infecção, 0,5% de letalidade"
+}
+
+//AJAX PARA CAPTAÇÃO DE DADOS POR ARQUIVOS EXTERNOS
+recalcular.onclick = function(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange= function(){
+      if(xhttp.readyState == 4 && xhttp.status == 200){
+          document.getElementById("resultados").innerHTML = "<pre>"+xhttp.responseText+"</pre>";
+      }
+  };
+  xhttp.open("GET","popIdade.json",true);
+  xhttp.send();
 }
